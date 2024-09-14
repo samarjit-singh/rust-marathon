@@ -1,24 +1,22 @@
-struct Rect {
-    width: i32,
-    height: i32,
-}
-
-impl Rect {
-    fn area(&self) -> i32 {
-        self.width * self.height // implicite return
-    }
-
-    fn perimeter(&self) -> i32 {
-        2 * (self.width + self.height)
-    }
+enum Shape {
+   Rectangle(f64, f64), // width, height
+   Circle(f64),         // radius
 }
 
 fn main() {
-    let rect1 = Rect {
-        width: 10,
-        height: 10
-    };
+    let rect = Shape::Rectangle(1.0, 2.0);
+    let area_rect = calculate_area(rect);
+    println!("Area of Rectangle: {}", area_rect);
 
-    println!("area is {}", rect1.area());
-    println!("perimeter is {}", rect1.perimeter());
+    let circle = Shape::Circle(2.0);
+    let area_circle = calculate_area(circle);
+    println!("Area of Circle: {}", area_circle); 
+}
+
+fn calculate_area(shape: Shape) -> f64 {
+    let area = match shape {// pattern matching
+        Shape::Rectangle(a, b) => a * b,
+        Shape::Circle(r) => 3.14 * r * r,
+    };
+    return area;
 }
