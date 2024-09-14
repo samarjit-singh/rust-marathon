@@ -1,6 +1,8 @@
 fn main() {
-    let ans = fib(4);
-    println!("{} hello ji!! ji aaya nu",ans);
+    // let ans = fib(4);
+    let name = String::from("Samarjit");
+    let len = get_str_len(name);
+    println!("{} hello ji!! ji aaya nu",len);
 }
 
 
@@ -13,23 +15,27 @@ fn main() {
 // }
 
 
-fn fib(num: i32) -> i32 {
-     let mut first = 0; // mutable variable
-     let mut second = 1;
+// fn fib(num: i32) -> i32 {
+//      let mut first = 0; // mutable variable
+//      let mut second = 1;
 
-     if num == 0 {
-        return first;
-     }
+//      if num == 0 {
+//         return first;
+//      }
 
-     if num == 1{
-        return second;
-     }
+//      if num == 1{
+//         return second;
+//      }
 
-     for _ in 0..num-1 {
-        let temp = second;
-        second = second+first;
-        first = temp;
-     }
+//      for _ in 0..num-1 {
+//         let temp = second;
+//         second = second+first;
+//         first = temp;
+//      }
 
-     return second;
+//      return second;
+// }
+
+fn get_str_len(str: String) -> usize {
+    str.chars().count()  //implicit return
 }
