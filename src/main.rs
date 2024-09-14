@@ -1,8 +1,18 @@
+struct User {  // similar to interface in typescript
+    first_name: String,
+    last_name: String,
+    age: i32
+}
+
+
 fn main() {
-    // let ans = fib(4);
-    let name = String::from("Samarjit");
-    let len = get_str_len(name);
-    println!("{} hello ji!! ji aaya nu",len);
+    let user = User {
+        first_name: String::from("Samarjit"),
+        last_name: String::from("Singh"),
+        age:22
+    };
+
+    println!("name: {} {} age: {}", user.first_name, user.last_name, user.age);
 }
 
 
@@ -36,6 +46,6 @@ fn main() {
 //      return second;
 // }
 
-fn get_str_len(str: String) -> usize {
-    str.chars().count()  //implicit return
-}
+// fn get_str_len(str: String) -> usize {
+//     str.chars().count()  //implicit return
+// }
